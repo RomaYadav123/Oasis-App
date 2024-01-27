@@ -1,0 +1,16 @@
+
+.header-left-sec {
+    border: 5px solid darkorchid;
+    background-color: #2C74DC;
+    text-align: start;
+    padding: 42px 34px 0px 62px;
+}
+
+.union-icon-style {
+    height: 30px;
+    width: 44px;
+}
+
+.header-left-name {
+    padding-left: 6px;
+}
