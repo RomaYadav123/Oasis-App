@@ -1,0 +1,12 @@
+.parent-welcome {
+  min-height: 100vh;
+  height: 100vh;
+}
+.welcome-left {
+  padding: 0px !important;
+  min-height: 100vh;
+}
+.welcome-side-img {
+  width: 100%;
+  height: 100%;
+}

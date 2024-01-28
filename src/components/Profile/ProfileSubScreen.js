@@ -1,7 +1,6 @@
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import headerLeftSec from "../../assets/header-left-section.png";
-import "../Welcome/WelcomeScreen.css";
-import "./RegisterScreen.css";
+import "./ProfileScreen.css";
 import GoogleIcon from "../../assets/google-icon-2.png";
 import PasswordChecklist from "react-password-checklist";
 import polygonIcon from "../../assets/polygon.svg";
@@ -11,21 +10,24 @@ import {
   faBriefcase,
   faEye,
   faEyeSlash,
+  faLock,
   faPerson,
   faUser,
   faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import CustomCard from "../../components/Card/CustomCard";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import MainContainer from "../../components/MainContainer/MainContainer";
 import CommonTitle from "../../components/Title/CommonTitle";
 import CommonInputField from "../../components/InputField/InputField";
 import InputField from "../../components/InputField/InputField";
 import PasswordForm from "../../components/PasswordForm/PasswordForm";
+import "../InputField/InputField.css";
+import Country from "../Country/Country";
 
-const RegisterScreen = () => {
+const ProfileSubScreen = () => {
   const [validated, setValidated] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [verificationStatus, setVerificationStatus] = useState({
@@ -37,6 +39,10 @@ const RegisterScreen = () => {
     fullName: "",
     email: "",
     password: "",
+    phoneNumber: "",
+    address: "",
+    country: "India",
+    bankVerificationNumber: "",
   });
 
   const [validatedFields, setValidatedFields] = useState({
@@ -123,17 +129,12 @@ const RegisterScreen = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const Navigate = useNavigate();
-  const handleNextPage = () => {
-    Navigate("/profile");
-  };
-
   return (
     <MainContainer>
-      <Header title="STEP 01/03" subTitle="Personal Info." />
+      <Header title="STEP 02/03" subTitle="Residency Info." />
       <div className="box-wrapper ">
         <CommonTitle
-          title="Register Individual Account!"
+          title="Complete your Profile!"
           para="For the purpose of industry regulation, Your details are required."
         />
         <Form
@@ -143,76 +144,29 @@ const RegisterScreen = () => {
           // className="box-wrapper"
         >
           <InputField
-            name="fullName"
-            label="Your fullname*"
-            type="text"
+            name="bankVerificationNumber"
+            label=" Bank Verification Number (BVN)*"
+            type="number"
             onChange={handleChange}
-            placeholder="Enter your fullname"
+            placeholder="Enter your BVN"
             feedback="Looks great!"
           />
 
-          <InputField
-            name="email"
-            label="Your Email Address*"
-            type="email"
-            onChange={handleChange}
-            placeholder="Enter your email"
-            feedback="Looks great!"
-          />
-
-          <PasswordForm
-            name="password"
-            label="Create your Password*"
-            type="password"
-            onChange={handleChange}
-          />
-          <Form.Check
-            className="group-parent"
-            required
-            label="I Agree to terms & conditions"
-            feedback="You must agree before submitting."
-            feedbackType="invalid"
-          />
+          
+          
           <div className="group-parent">
-            <Button
-              className="register-cta"
-              type="submit"
-              onClick={handleNextPage}
-            >
-              <span className="reg-cta-text">Register Account</span>
-            </Button>
-          </div>
-
-          <div className="d-flex justify-content-center align-items-center or-box">
-            <span className="or-styling"></span>Or
-            <span className="or-styling"></span>
-          </div>
-
-          <div className="google-box">
-            <Button variant="none" className="google-wrapper">
-              <div>
-                <a href="https://accounts.google.com/">
-                  <img
-                    src={GoogleIcon}
-                    alt="Google Icon"
-                    style={{
-                      width: "24px",
-                      height: "24px",
-                      marginRight: "8px",
-                      marginTop: "2px",
-                      borderStyle: "none",
-                    }}
-                    className="google-icon-tablet"
-                  />
-                </a>
-              </div>
-              <div className="google-reg-text">Register with Google</div>
+            <Button className="register-cta" type="submit">
+              <span className="reg-cta-text">Save & Continue</span>
             </Button>
           </div>
         </Form>
+        <div className="lock-wrapper">
+          <FontAwesomeIcon icon={faLock} className="lock-icon" />
+          <span className="footer-text">Your Info is safely secured</span>
+        </div>
       </div>
     </MainContainer>
   );
 };
 
-export default RegisterScreen;
+export default ProfileSubScreen;

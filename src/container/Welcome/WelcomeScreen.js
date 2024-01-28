@@ -11,6 +11,8 @@ import {
   faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import CustomCard from "../../components/Card/CustomCard";
+import MainContainer from "../../components/MainContainer/MainContainer";
+import CommonTitle from "../../components/Title/CommonTitle";
 
 const WelcomeScreen = () => {
   const handleIndividualClick = () => {
@@ -22,48 +24,37 @@ const WelcomeScreen = () => {
   };
 
   return (
-    <Container fluid className="parent-welcome">
-      <Row>
-        <Col lg={5} className="welcome-left ">
-          <img src={headerLeftSec} className="welcome-side-img" />
-        </Col>
+    <MainContainer>
+      <div className="welcome-header">
+        <span className="auth-details">
+          Already have an account?
+          <a href="./register" className="register-style">
+            <b>Sign In</b>
+          </a>
+        </span>
+      </div>
 
-        <Col lg={7}>
-          <div className="welcome-header">
-            <span className="auth-details">
-              Already have an account?
-              <a href="./register" className="register-style">
-                <b>Sign In</b>
-              </a>
-            </span>
-          </div>
+      <div className="welcome-section">
+        <CommonTitle
+          title="Join Us!"
+          para="To begin this journey, tell us what type of account you'd be opening."
+        />
 
-          <div className="welcome-section">
-            <div className="section-body">
-              <h2 className="body-title">Join Us!</h2>
-              <p className="para-content">
-                To begin this journey, tell us what type of account you'd be
-                opening.
-              </p>
-            </div>
+        <CustomCard
+          onClick={handleIndividualClick}
+          iconName={faUser}
+          title="Individual"
+          subtitle="Personal account to manage all your acitivities."
+        />
 
-            <CustomCard
-              onClick={handleIndividualClick}
-              iconName={faUser}
-              title="Individual"
-              subtitle="Personal account to manage all your acitivities."
-            />
-
-            <CustomCard
-              onClick={handleBusinessClick}
-              iconName={faBriefcase}
-              title="Business"
-              subtitle="Own or belong to a company, this is for you."
-            />
-          </div>
-        </Col>
-      </Row>
-    </Container>
+        <CustomCard
+          onClick={handleBusinessClick}
+          iconName={faBriefcase}
+          title="Business"
+          subtitle="Own or belong to a company, this is for you."
+        />
+      </div>
+    </MainContainer>
   );
 };
 

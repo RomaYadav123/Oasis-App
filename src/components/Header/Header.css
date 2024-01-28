@@ -1,16 +1,43 @@
-
-.header-left-sec {
-    border: 5px solid darkorchid;
-    background-color: #2C74DC;
-    text-align: start;
-    padding: 42px 34px 0px 62px;
+.parent-header {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-right: 90px;
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.union-icon-style {
-    height: 30px;
-    width: 44px;
+.header-left {
+  color: #8692a6;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 9px;
 }
 
-.header-left-name {
-    padding-left: 6px;
+.chevron-icon {
+  color: #8692a6;
+}
+
+.step-style {
+  color: #bdbdbd;
+  text-align: right;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.info-style {
+  color: #8692a6;
+  text-align: right;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
