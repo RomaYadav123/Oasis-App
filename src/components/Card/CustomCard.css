@@ -1,5 +1,5 @@
-.card-welcome {
-  width: 70%;
+.card-welcome-mob {
+  width: 100%;
   height: 108px;
   flex-shrink: 0;
   padding: 28px;
@@ -104,4 +104,231 @@
   color: #8692a6;
   font-family: "Inter";
   text-align: start;
+}
+
+
+/* Tablet media query */
+
+@media only screen and (min-width: 600px) {
+  .card-welcome {
+    width: 70%;
+    height: 108px;
+    flex-shrink: 0;
+    padding: 28px;
+    border-radius: 6px;
+    border: 1px solid #1565d8;
+    background: #f5f9ff;
+    box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+  }
+  
+  .card-body-oas {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px !important;
+  }
+  
+  .card-welcome:hover {
+    background-color: #f5f9ff;
+    cursor: pointer;
+    border: 2px solid #2e76dc;
+    border-radius: 8px;
+  }
+  
+  .polygon-box {
+    background-image: url("../../assets/polygon-border.svg");
+    background-size: cover;
+    background-position: center;
+    height: 52px;
+    width: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-welcome:hover .polygon-box {
+    background-image: url("../../assets/polygon.svg");
+    background-size: cover;
+    background-position: center;
+    height: 52px;
+    width: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-welcome:hover .user-icon {
+    color: #fff;
+  }
+  .right-arrow-icon {
+    display: none;
+  }
+  
+  .card-welcome:hover .right-arrow-icon {
+    display: flex;
+    color: #2e76dc;
+    cursor: pointer;
+  }
+  
+  .polygon-box-border {
+    background-size: cover;
+    fill: #1565d8;
+    background-position: center;
+    height: 52px;
+    width: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .user-icon {
+    color: rgba(21, 101, 216, 1);
+  }
+  
+  .briefcase-icon {
+    color: rgba(21, 101, 216, 1);
+  }
+  
+  .polygon-style {
+    position: relative;
+  }
+  
+  .polygon-body {
+    flex: 1;
+    margin-left: 28px;
+  }
+  
+  
+  .card-title-style {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: start;
+  }
+  .card-title-para {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8692a6;
+    font-family: "Inter";
+    text-align: start;
+  }
+  
+}
+
+/* Website media query */
+
+@media only screen and (min-width: 1028px) {
+  .card-welcome {
+    width: 70%;
+    height: 108px;
+    flex-shrink: 0;
+    padding: 28px;
+    border-radius: 6px;
+    border: 1px solid #1565d8;
+    background: #f5f9ff;
+    box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+  }
+  
+  .card-body-oas {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px !important;
+  }
+  
+  .card-welcome:hover {
+    background-color: #f5f9ff;
+    cursor: pointer;
+    border: 2px solid #2e76dc;
+    border-radius: 8px;
+  }
+  
+  .polygon-box {
+    background-image: url("../../assets/polygon-border.svg");
+    background-size: cover;
+    background-position: center;
+    height: 52px;
+    width: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-welcome:hover .polygon-box {
+    background-image: url("../../assets/polygon.svg");
+    background-size: cover;
+    background-position: center;
+    height: 52px;
+    width: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-welcome:hover .user-icon {
+    color: #fff;
+  }
+  .right-arrow-icon {
+    display: none;
+  }
+  
+  .card-welcome:hover .right-arrow-icon {
+    display: flex;
+    color: #2e76dc;
+    cursor: pointer;
+  }
+  
+  .polygon-box-border {
+    background-size: cover;
+    fill: #1565d8;
+    background-position: center;
+    height: 52px;
+    width: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .user-icon {
+    color: rgba(21, 101, 216, 1);
+  }
+  
+  .briefcase-icon {
+    color: rgba(21, 101, 216, 1);
+  }
+  
+  .polygon-style {
+    position: relative;
+  }
+  
+  .polygon-body {
+    flex: 1;
+    margin-left: 28px;
+  }
+  
+  
+  .card-title-style {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: start;
+  }
+  .card-title-para {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8692a6;
+    font-family: "Inter";
+    text-align: start;
+  }
+  
 }

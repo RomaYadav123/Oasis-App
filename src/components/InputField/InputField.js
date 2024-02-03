@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 import "./InputField.css";
 
 const InputField = ({
@@ -7,27 +7,31 @@ const InputField = ({
   type = "",
   placeholder = "",
   feedback = "",
-  defaultValue = "",
   onChange = () => {},
   name = "",
+  validateField = () => {},
 }) => {
   return (
     <Form.Group
+      as={Col}
       md="4"
       controlId={`validationCustom-${name}`}
       className="group-parent"
     >
       <Form.Label className="label-style">{label}</Form.Label>
+
       <Form.Control
-        name={name}
-        onChange={onChange}
         required
+        name={name}
+        onChange={(e) => {
+          onChange(e);
+          validateField(name, e.target.value); // Trigger field validation
+        }}
         type={type}
         placeholder={placeholder}
-        defaultValue={defaultValue}
-        className="control-style"
+        className="control-style control-mob"
       />
-      <Form.Control.Feedback>{feedback}</Form.Control.Feedback>
+      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
     </Form.Group>
   );
 };

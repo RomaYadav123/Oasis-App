@@ -104,23 +104,38 @@ const RegisterScreen = () => {
     e.preventDefault();
     setValidated(true);
 
-    const isValid = isStepValid();
+    // Validate each field
+    Object.entries(formData).forEach(([name, value]) => {
+      validateField(name, value);
+    });
 
-    if (!isValid) {
-      console.log("isValid");
+    // Check if all fields are filled
+    const isFieldsFilled = Object.values(validatedFields).every(
+      (field) => field !== false
+    );
+
+    if (!isFieldsFilled) {
+      console.log("Please fill in all details");
+      return;
     }
+    // Continue with form submission logic
     const requestData = {
       fullName: formData.fullName,
       email: formData.email,
       password: formData.password,
     };
-    console.log("request data", formData);
+    console.log("request data", requestData);
+
+    // Proceed to the next page
+    handleNextPage();
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log({ name, value });
     setFormData({ ...formData, [name]: value });
+
+    validateField(name, value);
   };
 
   const Navigate = useNavigate();
@@ -131,64 +146,60 @@ const RegisterScreen = () => {
   return (
     <MainContainer>
       <Header title="STEP 01/03" subTitle="Personal Info." />
-      <div className="box-wrapper ">
+      <div className="box-wrapper box-wrapper-mob">
         <CommonTitle
           title="Register Individual Account!"
           para="For the purpose of industry regulation, Your details are required."
         />
-        <Form
-          noValidate
-          validated={validated}
-          onSubmit={handleSubmit}
-          // className="box-wrapper"
-        >
-          <InputField
-            name="fullName"
-            label="Your fullname*"
-            type="text"
-            onChange={handleChange}
-            placeholder="Enter your fullname"
-            feedback="Looks great!"
-          />
 
-          <InputField
-            name="email"
-            label="Your Email Address*"
-            type="email"
-            onChange={handleChange}
-            placeholder="Enter your email"
-            feedback="Looks great!"
-          />
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Row className="mb-3">
+            <InputField
+              label="Your Fullname*"
+              type="text"
+              placeholder="Enter your fullname"
+              feedback="Looks fine"
+              onChange={handleFullNameChange}
+              name="fullname"
+              validateField={validateField}
+            />
 
-          <PasswordForm
-            name="password"
-            label="Create your Password*"
-            type="password"
-            onChange={handleChange}
-          />
-          <Form.Check
-            className="group-parent"
-            required
-            label="I Agree to terms & conditions"
-            feedback="You must agree before submitting."
-            feedbackType="invalid"
-          />
-          <div className="group-parent">
-            <Button
-              className="register-cta"
-              type="submit"
-              onClick={handleNextPage}
-            >
-              <span className="reg-cta-text">Register Account</span>
-            </Button>
-          </div>
+            <InputField
+              label="Your Emaill Address*"
+              type="text"
+              placeholder="Enter your email"
+              feedback="Please fill in details.!"
+              onChange={handleEmailChange}
+              validateField={validateField}
+            />
 
-          <div className="d-flex justify-content-center align-items-center or-box">
+            <PasswordForm
+              name="password"
+              label="Create your Password*"
+              type="password"
+              onChange={handleChange}
+              validateField={validateField}
+            />
+          </Row>
+
+          <Form.Group className="mb-3">
+            <Form.Check
+              required
+              label=" I Agree to terms & conditions"
+              feedback="You must agree before submitting."
+              feedbackType="invalid"
+            />
+          </Form.Group>
+          <Button type="submit" className="register-cta cta-mob">
+            <span className="reg-cta-text">Register Account</span>
+          </Button>
+
+          <div className="d-flex justify-content-center align-items-center or-box or-box-mob">
             <span className="or-styling"></span>Or
             <span className="or-styling"></span>
           </div>
 
-          <div className="google-box">
+          <div className="google-box google-box-mob">
             <Button variant="none" className="google-wrapper">
               <div>
                 <a href="https://accounts.google.com/">

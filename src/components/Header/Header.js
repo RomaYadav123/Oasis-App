@@ -10,7 +10,7 @@ const Header = ({ title = "", subTitle = "" }) => {
     Navigate(-1);
   };
   return (
-    <div className="parent-header">
+    <div className="parent-header parent-header-mob">
       <div onClick={handleBackClick}>
         <FontAwesomeIcon icon={faChevronLeft} className="chevron-icon" />
         <span className="header-left">Back</span>

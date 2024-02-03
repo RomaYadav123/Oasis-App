@@ -20,7 +20,6 @@ function App() {
 
         <Route path="/profile" element={<ProfileScreen />} />
         <Route path="/profilesub" element={<ProfileSubScreen />} />
-
       </Routes>
     </Router>
   );

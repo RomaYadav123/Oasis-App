@@ -20,6 +20,7 @@ import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import MainContainer from "../../components/MainContainer/MainContainer";
+import "../MainContainer/MainContainer.css";
 import CommonTitle from "../../components/Title/CommonTitle";
 import CommonInputField from "../../components/InputField/InputField";
 import InputField from "../../components/InputField/InputField";
@@ -29,6 +30,7 @@ import Country from "../Country/Country";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import PhoneNumberScreen from "../PhoneNumber/PhoneNumber";
+import "../../container/Register/RegisterScreen.css";
 
 const ProfileScreen = () => {
   const [value, setValue] = useState();
@@ -46,12 +48,17 @@ const ProfileScreen = () => {
     phoneNumber: "",
     address: "",
     country: "India",
+    bankVerificationNumber: "",
   });
 
   const [validatedFields, setValidatedFields] = useState({
     fullName: false,
     email: false,
     password: false,
+    phoneNumber: false,
+    address: false,
+    country: false,
+    bankVerificationNumber: false,
   });
 
   const [fullName, setFullName] = useState("");
@@ -113,17 +120,30 @@ const ProfileScreen = () => {
     e.preventDefault();
     setValidated(true);
 
-    const isValid = isStepValid();
+    Object.entries(formData).forEach(([name, value]) => {
+      validateField(name, value);
+    });
 
-    if (!isValid) {
-      console.log("isValid");
+    const isFieldsFilled = Object.values(validatedFields).every(
+      (field) => field !== false
+    );
+
+    if (!isFieldsFilled) {
+      console.log("Please fill in all details");
+      return;
     }
+   
     const requestData = {
       fullName: formData.fullName,
       email: formData.email,
       password: formData.password,
+      phoneNumber: formData.phoneNumber,
+      address: formData.address,
+      country: formData.country,
     };
-    console.log("request data", formData);
+    console.log("request data", requestData);
+
+    handleSaveClick();
   };
 
   const handleChange = (e) => {
@@ -139,43 +159,33 @@ const ProfileScreen = () => {
   return (
     <MainContainer>
       <Header title="STEP 02/03" subTitle="Residency Info." />
-      <div className="box-wrapper ">
+      <div className="box-wrapper box-wrapper-mob">
         <CommonTitle
           title="Complete your Profile!"
           para="For the purpose of industry regulation, Your details are required."
         />
-        <Form
-          noValidate
-          validated={validated}
-          onSubmit={handleSubmit}
-          // className="box-wrapper"
-        >
-          <PhoneNumberScreen />
 
-          <InputField
-            name="address"
-            label=" Address*"
-            type="text"
-            onChange={handleChange}
-            placeholder="Enter your address"
-            feedback="Looks great!"
-          />
-          <div className="group-parent">
-            <Country className="country-style " />
-          </div>
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Row className="mb-3">
+            <PhoneNumberScreen />
 
-          <div className="group-parent">
-            <Button
-              className="register-cta"
-              type="submit"
-              onClick={handleSaveClick}
-            >
-              <span className="reg-cta-text">Save & Continue</span>
-            </Button>
-          </div>
+            <InputField
+              label="Your Address*"
+              type="text"
+              placeholder="Enter your address"
+              feedback="Please fill in details.!"
+              onChange={handleFullNameChange}
+              validateField={validateField}
+            />
+
+            <Country />
+          </Row>
+          <Button type="submit" className="register-cta cta-mob">
+            <span className="reg-cta-text">Save & Continue</span>
+          </Button>
         </Form>
 
-        <div className="lock-wrapper">
+        <div className="lock-wrapper mt-4">
           <FontAwesomeIcon icon={faLock} className="lock-icon" />
           <span className="footer-text">Your Info is safely secured</span>
         </div>

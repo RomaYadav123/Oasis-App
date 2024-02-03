@@ -14,13 +14,15 @@
   margin-bottom: 14px !important;
 }
 
-.control-style {
-  width: 426px !important;
-  height: 64px !important;
+.control-mob {
+  /* border: 5px solid green !important; */
+  width: 100px;
+  max-width: 88vw;
+  height: 64px;
   flex-shrink: 0;
 }
 
-.control-style:hover {
+.control-mob:hover {
   cursor: pointer;
   border: 1px solid #1565d8;
   box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
@@ -35,4 +37,90 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+/* Tablet media query */
+
+@media only screen and (min-width: 600px) {
+  .group-parent {
+    width: 426px !important;
+    text-align: start;
+    margin-bottom: 24px;
+  }
+  .label-style {
+    color: #696f79;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+    margin-bottom: 14px !important;
+  }
+
+  .control-style {
+    width: 426px !important;
+    height: 64px !important;
+    flex-shrink: 0;
+  }
+
+  .control-style:hover {
+    cursor: pointer;
+    border: 1px solid #1565d8;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    background-color: #fff;
+    border-radius: 6px;
+  }
+
+  .control-style::placeholder {
+    color: #8692a6;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+
+/* Website media query */
+
+@media only screen and (min-width: 1028px) {
+  .group-parent {
+    width: 426px !important;
+    text-align: start;
+    margin-bottom: 24px;
+  }
+  .label-style {
+    color: #696f79;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+    margin-bottom: 14px !important;
+  }
+
+  .control-style {
+    width: 426px !important;
+    height: 64px !important;
+    flex-shrink: 0;
+  }
+
+  .control-style:hover {
+    cursor: pointer;
+    border: 1px solid #1565d8;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    background-color: #fff;
+    border-radius: 6px;
+  }
+
+  .control-style::placeholder {
+    color: #8692a6;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
 }

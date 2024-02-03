@@ -26,6 +26,9 @@ import InputField from "../../components/InputField/InputField";
 import PasswordForm from "../../components/PasswordForm/PasswordForm";
 import "../InputField/InputField.css";
 import Country from "../Country/Country";
+import "./ProfileSubScreen.css";
+import "../../container/Register/RegisterScreen.css";
+
 
 const ProfileSubScreen = () => {
   const [validated, setValidated] = useState(false);
@@ -49,6 +52,10 @@ const ProfileSubScreen = () => {
     fullName: false,
     email: false,
     password: false,
+    phoneNumber: false,
+    address: false,
+    country: false,
+    bankVerificationNumber: false,
   });
 
   const [fullName, setFullName] = useState("");
@@ -119,8 +126,13 @@ const ProfileSubScreen = () => {
       fullName: formData.fullName,
       email: formData.email,
       password: formData.password,
+      phoneNumber: formData.phoneNumber,
+      address: formData.address,
+      country: formData.country,
+      bankVerificationNumber: formData.bankVerificationNumber,
     };
-    console.log("request data", formData);
+  
+    console.log("request data", requestData);
   };
 
   const handleChange = (e) => {
@@ -132,35 +144,32 @@ const ProfileSubScreen = () => {
   return (
     <MainContainer>
       <Header title="STEP 02/03" subTitle="Residency Info." />
-      <div className="box-wrapper ">
+      <div className="box-wrapper box-wrapper-mob">
         <CommonTitle
           title="Complete your Profile!"
           para="For the purpose of industry regulation, Your details are required."
         />
-        <Form
-          noValidate
-          validated={validated}
-          onSubmit={handleSubmit}
-          // className="box-wrapper"
-        >
-          <InputField
-            name="bankVerificationNumber"
-            label=" Bank Verification Number (BVN)*"
-            type="number"
-            onChange={handleChange}
-            placeholder="Enter your BVN"
-            feedback="Looks great!"
-          />
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Row className="mb-3">
+          
 
-          
-          
-          <div className="group-parent">
-            <Button className="register-cta" type="submit">
-              <span className="reg-cta-text">Save & Continue</span>
-            </Button>
-          </div>
+            <InputField
+              label="Bank Verification Number (BVN)"
+              type="text"
+              placeholder="Enter your address"
+              feedback="Please fill in details.!"
+              onChange={handleFullNameChange}
+              validateField={validateField}
+            />
+
+            
+          </Row>
+
+          <Button type="submit" className="register-cta cta-mob">
+            <span className="reg-cta-text">Save & Continue</span>
+          </Button>
         </Form>
-        <div className="lock-wrapper">
+        <div className="lock-wrapper mt-4">
           <FontAwesomeIcon icon={faLock} className="lock-icon" />
           <span className="footer-text">Your Info is safely secured</span>
         </div>

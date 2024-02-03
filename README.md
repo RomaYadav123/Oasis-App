@@ -68,3 +68,189 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+### About Welcome Screen:
+
+1. `Overview`
+
+The WelcomeScreen component consists of two cards, allowing the user to select between an individual or business account.
+
+2. `Props`
+
+None
+This component does not currently accept any props.
+
+3. `Functions`
+
+handleIndividualClick()
+This function is triggered when the user clicks on the "Individual" card. It logs a message to the console.
+
+handleBusinessClick()
+This function is triggered when the user clicks on the "Business" card. It logs a message to the console.
+
+4. `Styles`
+
+This component uses styles from the "WelcomeScreen.css" file to ensure a consistent and visually appealing layout.
+
+5. `Dependencies`
+
+React: ^16.8.0
+react-bootstrap: ^5.3.0
+@fortawesome/react-fontawesome: ^0.1.14
+
+6. `Additional Information`
+
+This component is part of the onboarding process and should be rendered within a MainContainer for proper styling and layout.
+
+7. `Summary`
+
+The WelcomeScreen component is a part of our application's onboarding process. It provides users with the option to choose between creating an individual or business account.
+
+### About Registration Screen:
+
+1. `Overview`
+
+The RegisterScreen component contains a form with fields for the user's full name, email address, and password. It also includes an option to register using a Google account.
+
+2. `Props`
+
+None
+This component does not currently accept any props.
+
+3. `Functions`
+
+validateField(name, value)
+This function validates individual form fields by checking if they are filled. It is used for dynamic validation during user input.
+
+isStepValid()
+This function checks if all form fields are valid to enable form submission.
+
+handleFullNameChange(e)
+This function handles changes in the full name input field, performing validation to allow only non-numeric characters.
+
+handleEmailChange(e)
+This function handles changes in the email input field, ensuring a valid email format.
+
+handleSubmit(e)
+This function is triggered when the form is submitted. It validates the form, checks for filled fields, and logs the form data before proceeding to the next page.
+
+handleChange(e)
+This function updates the component's state based on user input.
+
+handleNextPage()
+This function navigates to the next page upon successful form submission.
+
+4. `Styles`
+
+This component uses styles from the "RegisterScreen.css" file to maintain a consistent and visually appealing layout.
+
+5. `Dependencies`
+
+React: ^16.8.0
+react-bootstrap: ^5.3.0
+Additional Information
+This component is part of the registration process and should be rendered within a MainContainer for proper styling and layout.
+
+6. `Summary`
+
+The RegisterScreen component handles individual account registration, ensuring the collection of required details, form validation, and a smooth transition to the next step in the registration process. It plays a crucial role in onboarding users to our application.
+
+### About Profile Screen:
+
+1. `Overview`
+
+The ProfileScreen component extends the user registration process by gathering residency-related information. It includes a form with fields for the user's phone number, address, and country.
+
+2. `Props`
+
+None
+This component does not currently accept any props.
+
+3. `Functions`
+
+validateField(name, value)
+This function validates individual form fields by checking if they are filled. It is used for dynamic validation during user input.
+
+isStepValid()
+This function checks if all form fields are valid to enable form submission.
+
+handleFullNameChange(e)
+This function handles changes in the full name input field, performing validation to allow only non-numeric characters.
+
+handleEmailChange(e)
+This function handles changes in the email input field, ensuring a valid email format.
+
+handleSubmit(e)
+This function is triggered when the form is submitted. It validates the form, logs the form data, and may perform additional actions in the future.
+
+handleChange(e)
+This function updates the component's state based on user input.
+
+handleSaveClick()
+This function is triggered when the "Save & Continue" button is clicked. It navigates the user to the next step in the onboarding process.
+
+4. `Styles`
+
+This component uses styles from the "ProfileScreen.css" file to maintain a consistent and visually appealing layout.
+
+5. `Dependencies`
+
+React: ^16.8.0
+react-bootstrap: ^5.3.0
+react-phone-number-input: ^1.3.1
+Additional Information
+This component is part of the onboarding process and should be rendered within a MainContainer for proper styling and layout.
+
+6. `Summary`
+
+The ProfileScreen component plays a pivotal role in gathering essential residency-related information from users during the registration process. It ensures a smooth and comprehensive onboarding experience, leading users to the next step with their profile data securely stored.
+
+
+### About ProfileSub Screen:
+
+1. `Overview`
+
+The ProfileSubScreen component extends the user registration process by gathering specific details related to banking verification. It includes a form with a field for the user's Bank Verification Number (BVN).
+
+2. `Props`
+
+None
+This component does not currently accept any props.
+
+3. `Functions`
+
+validateField(name, value)
+This function validates individual form fields by checking if they are filled. It is used for dynamic validation during user input.
+
+isStepValid()
+This function checks if all form fields are valid to enable form submission.
+
+handleFullNameChange(e)
+This function handles changes in the full name input field, performing validation to allow only non-numeric characters.
+
+handleEmailChange(e)
+This function handles changes in the email input field, ensuring a valid email format.
+
+handleSubmit(e)
+This function is triggered when the form is submitted. It validates the form, logs the form data, and may perform additional actions in the future.
+
+handleChange(e)
+This function updates the component's state based on user input.
+
+4. `Styles`
+
+This component uses styles from the "ProfileSubScreen.css" file to maintain a consistent and visually appealing layout.
+
+5. `Dependencies`
+
+React: ^16.8.0
+react-bootstrap: ^5.3.0
+Additional Information
+This component is part of the onboarding process and should be rendered within a MainContainer for proper styling and layout.
+
+6. `Summary`
+
+The ProfileSubScreen component is a pivotal step in gathering essential details related to banking verification. It ensures a smooth and comprehensive onboarding experience, leading users to the next step with their profile data securely stored.
+

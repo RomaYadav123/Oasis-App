@@ -6,7 +6,7 @@ const MainContainer = ({ children }) => {
   return (
     <Container fluid className="parent-welcome">
       <Row>
-        <Col lg={5} className="welcome-left">
+        <Col lg={5} className="welcome-left welcome-left-hide">
           <img src={headerLeftSec} className="welcome-side-img" />
         </Col>
 

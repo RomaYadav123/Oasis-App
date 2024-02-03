@@ -8,8 +8,9 @@
   right: 0;
   z-index: 99;
   margin-top: 24px;
-  margin-right: 92px;
+  margin-left: 92px;
   color: lightgray;
+  border: 5px solid red;
 }
 .register-cta {
   margin-top: 24px;
@@ -33,10 +34,54 @@
   width: 172px;
   margin: 33px 0px;
 }
+.cta-mob {
+  width: 368px !important;
+}
 
 .google-box {
-  margin-top: 16px;
+  /* margin-top: 10px; */
   width: 426px;
+  height: 64px;
+  /* border: 5px solid red; */
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-wrapper {
+  width: 80%;
+  display: flex !important;
+  justify-content: space-around;
+  align-items: center;
+}
+.google-reg-text {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-wrapper-mob {
+  padding-left: 12px;
+  padding-bottom: 28px;
+  /* border: 5px solid blue; */
+}
+
+.title-styling {
+  padding-top: 0px;
+  padding-left: 222px;
+}
+
+.google-box-mob {
+  /* border: 5px solid red; */
+  width: 366px;
   height: 64px;
   border-radius: 6px;
   background: #fff;
@@ -63,15 +108,175 @@
   white-space: nowrap;
 }
 
-.box-wrapper {
-  padding-left: 127px;
+.or-box-mob {
+  width: 100%;
+  /* border: 5px solid yellow; */
+  /* margin-top: 0px !important; */
 }
 
-.title-styling {
-  padding-top: 0px;
-  padding-left: 222px;
+/* Tablet media query */
+
+@media only screen and (min-width: 600px) {
+  .input-with-icon {
+    width: 54vmin !important;
+  }
+  
+  .envelope-style {
+    position: absolute;
+    top: 10;
+    right: 0;
+    z-index: 99;
+    margin-top: 24px;
+    margin-right: 92px;
+    color: lightgray;
+  }
+  .register-cta {
+    margin-top: 24px;
+    width: 426px !important;
+    height: 64px !important;
+    text-align: center !important;
+  }
+  .reg-text-cta {
+    color: #fff;
+    text-align: center !important;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .or-styling {
+    background-color: #f5f5f5;
+    height: 1px;
+    width: 172px;
+    margin: 33px 0px;
+  }
+  
+  .google-box {
+    width: 426px;
+    height: 64px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .google-wrapper {
+    width: 80%;
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .google-reg-text {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .box-wrapper {
+    padding-left: 127px;
+    padding-bottom: 28px;
+    
+  }
+  
+  .title-styling {
+    padding-top: 0px;
+    padding-left: 222px;
+  }
+  
+  .or-box {
+    width: 60%;
+  }
 }
 
-.or-box {
-  width: 60%;
+/* Website media query */
+
+@media only screen and (min-width: 1028px) {
+  .input-with-icon {
+    width: 54vmin !important;
+  }
+  
+  .envelope-style {
+    position: absolute;
+    top: 10;
+    right: 0;
+    z-index: 99;
+    margin-top: 24px;
+    margin-right: 92px;
+    color: lightgray;
+  }
+  .register-cta {
+    margin-top: 24px;
+    width: 426px !important;
+    height: 64px !important;
+    text-align: center !important;
+  }
+  .reg-text-cta {
+    color: #fff;
+    text-align: center !important;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .or-styling {
+    background-color: #f5f5f5;
+    height: 1px;
+    width: 172px;
+    margin: 33px 0px;
+  }
+  
+  .google-box {
+    width: 426px;
+    height: 64px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .google-wrapper {
+    width: 80%;
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .google-reg-text {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .box-wrapper {
+    padding-left: 127px;
+    padding-bottom: 28px;
+    
+  }
+  
+  .title-styling {
+    padding-top: 0px;
+    padding-left: 222px;
+  }
+  
+  .or-box {
+    width: 60%;
+  }
 }
+

@@ -10,7 +10,7 @@ const CustomCard = ({
   onClick = () => {},
 }) => {
   return (
-    <Card className="card-welcome" onClick={onClick}>
+    <Card className="card-welcome card-welcome-mob" onClick={onClick}>
       <Card.Body className="card-body-oas">
         <div className="polygon-box">
           <FontAwesomeIcon icon={iconName} className="user-icon" />

@@ -25,7 +25,7 @@ const WelcomeScreen = () => {
 
   return (
     <MainContainer>
-      <div className="welcome-header">
+      <div className="welcome-header welcome-header-mob">
         <span className="auth-details">
           Already have an account?
           <a href="./register" className="register-style">
@@ -34,7 +34,7 @@ const WelcomeScreen = () => {
         </span>
       </div>
 
-      <div className="welcome-section">
+      <div className="welcome-section welcome-section-mob">
         <CommonTitle
           title="Join Us!"
           para="To begin this journey, tell us what type of account you'd be opening."
