@@ -1,0 +1,59 @@
+.phone-mob {
+  border: 2px solid #f4f5f6;
+  width: 426px;
+  max-width: 88vw;
+  height: 64px;
+  flex-shrink: 0;
+  padding: 0px 12px;
+  border-radius: 4px;
+}
+
+.phone-mob:hover {
+  cursor: pointer;
+  border: 1px solid #1565d8;
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+/* Tablet media query */
+
+@media only screen and (min-width: 600px) {
+  .phone-style {
+    border: 2px solid #f4f5f6;
+    /* border: 5px solid red !important; */
+    width: 426px;
+    height: 64px;
+    flex-shrink: 0;
+    padding: 0px 12px;
+  }
+
+  .phone-style:hover {
+    cursor: pointer;
+    border: 1px solid #1565d8;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    background-color: #fff;
+    border-radius: 6px;
+  }
+}
+
+/* Website media query */
+
+@media only screen and (min-width: 1028px) {
+  .phone-style {
+    border: 2px solid #f4f5f6;
+    /* border: 5px solid red !important; */
+    width: 426px;
+    height: 64px;
+    flex-shrink: 0;
+    padding: 0px 12px;
+  }                                                                                                                                                                                                                       
+
+  .phone-style:hover {
+    cursor: pointer;
+    border: 1px solid #1565d8;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    background-color: #fff;
+    border-radius: 6px;
+  }
+}

@@ -1,0 +1,139 @@
+.parent-header-mob {
+  /* border: 5px solid red; */
+  margin-top: 15px;
+  margin-bottom: 75px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  color: #8692a6;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 9px;
+}
+
+.chevron-icon {
+  color: #8692a6;
+}
+
+.step-style {
+  color: #bdbdbd;
+  text-align: right;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.info-style {
+  color: #8692a6;
+  text-align: right;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* Tablet media query */
+
+@media only screen and (min-width: 600px) {
+  .parent-header {
+    margin-top: 75px;
+    margin-bottom: 75px;
+    margin-right: 90px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-left {
+    color: #8692a6;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 9px;
+  }
+  
+  .chevron-icon {
+    color: #8692a6;
+  }
+  
+  .step-style {
+    color: #bdbdbd;
+    text-align: right;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .info-style {
+    color: #8692a6;
+    text-align: right;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+/* Website media query */
+
+@media only screen and (min-width: 1028px) {
+  .parent-header {
+    margin-top: 75px;
+    margin-bottom: 75px;
+    margin-right: 90px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-left {
+    color: #8692a6;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 9px;
+  }
+  
+  .chevron-icon {
+    color: #8692a6;
+  }
+  
+  .step-style {
+    color: #bdbdbd;
+    text-align: right;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .info-style {
+    color: #8692a6;
+    text-align: right;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
