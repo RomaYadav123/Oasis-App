@@ -26,52 +26,12 @@ const PasswordForm = ({
         type={showPassword ? "text" : "password"}
         onChange={onChange}
       />
-      {/* <PasswordChecklist
-        rules={["specialChar", "number", "capital"]}
-        minLength={8}
-        value={password}
-        messages={{
-          minLength: "Password shall have 8 Characters",
-          specialChar: "Include a Special Character.",
-          number: "Include a Number",
-          capital: "Include a Capital letter.",
-        }}
-      /> */}
       <span onClick={togglePasswordVisibility} className="envelope-style">
         {showPassword ? "hide" : "show"}
       </span>
     </div>
   );
 
-  //   return (
-  //     <div className="input-with-icon">
-  //       <Form.Control
-  //         required
-  //         name={name}
-  //         type={showPassword ? "text" : "password"}
-  //         value={formData.password}
-  //         onChange={handleChange}
-  //         className="control-style"
-  //       />
-  //       <span onClick={togglePasswordVisibility} className="envelope-style">
-  //         {showPassword ? "hide" : "show"}
-  //       </span>
-  //       <Form.Control.Feedback type="invalid">
-  //         Please provide a strong password.
-  //       </Form.Control.Feedback>
-  //       <PasswordChecklist
-  //         rules={["minLength", "specialChar", "number", "capital"]}
-  //         minLength={8}
-  //         value={formData.password}
-  //         messages={{
-  //           minLength: "Password shall have 8 Characters",
-  //           specialChar: "Include a Special Character.",
-  //           number: "Include a Number",
-  //           capital: "Include a Capital letter.",
-  //         }}
-  //       />
-  //     </div>
-  //   );
 };
 
 export default PasswordForm;

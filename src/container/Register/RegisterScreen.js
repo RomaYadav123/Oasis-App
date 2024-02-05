@@ -60,8 +60,6 @@ const RegisterScreen = () => {
     return Object.values(validatedFields).every((field) => field);
   };
 
-  //full name validation starts here
-
   const handleFullNameChange = (e) => {
     const fullNameInput = e.target.value;
 
@@ -78,9 +76,6 @@ const RegisterScreen = () => {
     }
   };
 
-  //full name validation ends here
-
-  //email validation goes here //
   const handleEmailChange = (e) => {
     const emailInput = e.target.value;
 
@@ -98,18 +93,38 @@ const RegisterScreen = () => {
     }
   };
 
-  // email validation ends here
+  const handlePasswordChange = (e) => {
+    const passwordInput = e.target.value;
+
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+    // At least 8 characters long
+    // Contains at least one uppercase letter
+    // Contains at least one lowercase letter
+    // Contains at least one digit
+    // Contains at least one special character (e.g., !@#$%^&*)
+
+
+    if (passwordRegex.test(passwordInput)) {
+      setFormData({
+        ...formData,
+        password: passwordInput,
+      });
+      e.target.setCustomValidity("");
+    } else {
+      e.target.setCustomValidity("Please enter a strong password.");
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setValidated(true);
 
-    // Validate each field
     Object.entries(formData).forEach(([name, value]) => {
       validateField(name, value);
     });
 
-    // Check if all fields are filled
     const isFieldsFilled = Object.values(validatedFields).every(
       (field) => field !== false
     );
@@ -118,7 +133,6 @@ const RegisterScreen = () => {
       console.log("Please fill in all details");
       return;
     }
-    // Continue with form submission logic
     const requestData = {
       fullName: formData.fullName,
       email: formData.email,
@@ -126,7 +140,6 @@ const RegisterScreen = () => {
     };
     console.log("request data", requestData);
 
-    // Proceed to the next page
     handleNextPage();
   };
 
@@ -177,7 +190,7 @@ const RegisterScreen = () => {
               name="password"
               label="Create your Password*"
               type="password"
-              onChange={handleChange}
+              onChange={handlePasswordChange}
               validateField={validateField}
             />
           </Row>

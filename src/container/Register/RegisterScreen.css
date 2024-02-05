@@ -4,13 +4,13 @@
 
 .envelope-style {
   position: absolute;
-  top: 10;
+  top: 0;
   right: 0;
   z-index: 99;
-  margin-top: 24px;
-  margin-left: 92px;
+  margin-top: 54px !important;
+  margin-right: 58px !important;
   color: lightgray;
-  border: 5px solid red;
+  /* border: 5px solid red; */
 }
 .register-cta {
   margin-top: 24px;
@@ -126,9 +126,10 @@
     top: 10;
     right: 0;
     z-index: 99;
-    margin-top: 24px;
-    margin-right: 92px;
+    margin-top: 54px !important;
+    margin-right: 282px !important;
     color: lightgray;
+    /* border: 5px solid yellow; */
   }
   .register-cta {
     margin-top: 24px;
@@ -209,8 +210,8 @@
     top: 10;
     right: 0;
     z-index: 99;
-    margin-top: 24px;
-    margin-right: 92px;
+    margin-top: 54px !important;
+    margin-right: 382px !important;
     color: lightgray;
   }
   .register-cta {

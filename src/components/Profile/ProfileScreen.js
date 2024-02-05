@@ -47,7 +47,7 @@ const ProfileScreen = () => {
     password: "",
     phoneNumber: "",
     address: "",
-    country: "India",
+    country: "",
     bankVerificationNumber: "",
   });
 
@@ -65,6 +65,7 @@ const ProfileScreen = () => {
 
   const validateField = (name, value) => {
     const isValid = value.trim() !== "";
+    console.log(`Field ${name} is valid: ${isValid}`);
 
     setValidatedFields((prevValidatedFields) => ({
       ...prevValidatedFields,
@@ -76,7 +77,7 @@ const ProfileScreen = () => {
     return Object.values(validatedFields).every((field) => field);
   };
 
-  //full name validation starts here
+
 
   const handleFullNameChange = (e) => {
     const fullNameInput = e.target.value;
@@ -94,13 +95,10 @@ const ProfileScreen = () => {
     }
   };
 
-  //full name validation ends here
 
-  //email validation goes here //
+
   const handleEmailChange = (e) => {
     const emailInput = e.target.value;
-
-    // Regular expression for basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (emailRegex.test(emailInput)) {
@@ -108,13 +106,14 @@ const ProfileScreen = () => {
         ...formData,
         email: emailInput,
       });
+      validateField("email", emailInput);
       e.target.setCustomValidity("");
     } else {
       e.target.setCustomValidity("Please enter a valid email address.");
     }
   };
 
-  // email validation ends here
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -124,15 +123,17 @@ const ProfileScreen = () => {
       validateField(name, value);
     });
 
+    console.log("Validated Fields:", validatedFields);
+
     const isFieldsFilled = Object.values(validatedFields).every(
-      (field) => field !== false
+      (field) => field === false
     );
 
-    if (!isFieldsFilled) {
+    if (isFieldsFilled) {
       console.log("Please fill in all details");
       return;
     }
-   
+
     const requestData = {
       fullName: formData.fullName,
       email: formData.email,
@@ -144,6 +145,8 @@ const ProfileScreen = () => {
     console.log("request data", requestData);
 
     handleSaveClick();
+
+    Navigate("/profilesub");
   };
 
   const handleChange = (e) => {

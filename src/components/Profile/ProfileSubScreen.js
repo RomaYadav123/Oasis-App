@@ -17,7 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import CustomCard from "../../components/Card/CustomCard";
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import MainContainer from "../../components/MainContainer/MainContainer";
 import CommonTitle from "../../components/Title/CommonTitle";
@@ -29,8 +29,9 @@ import Country from "../Country/Country";
 import "./ProfileSubScreen.css";
 import "../../container/Register/RegisterScreen.css";
 
-
 const ProfileSubScreen = () => {
+  const navigate = useNavigate();
+
   const [validated, setValidated] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [verificationStatus, setVerificationStatus] = useState({
@@ -49,13 +50,13 @@ const ProfileSubScreen = () => {
   });
 
   const [validatedFields, setValidatedFields] = useState({
-    fullName: false,
-    email: false,
-    password: false,
-    phoneNumber: false,
-    address: false,
-    country: false,
-    bankVerificationNumber: false,
+    fullName: true,
+    email: true,
+    password: true,
+    phoneNumber: true,
+    address: true,
+    country: true,
+    bankVerificationNumber: true,
   });
 
   const [fullName, setFullName] = useState("");
@@ -73,8 +74,6 @@ const ProfileSubScreen = () => {
     return Object.values(validatedFields).every((field) => field);
   };
 
-  //full name validation starts here
-
   const handleFullNameChange = (e) => {
     const fullNameInput = e.target.value;
 
@@ -91,13 +90,9 @@ const ProfileSubScreen = () => {
     }
   };
 
-  //full name validation ends here
-
-  //email validation goes here //
   const handleEmailChange = (e) => {
     const emailInput = e.target.value;
 
-    // Regular expression for basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (emailRegex.test(emailInput)) {
@@ -111,8 +106,6 @@ const ProfileSubScreen = () => {
     }
   };
 
-  // email validation ends here
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setValidated(true);
@@ -121,6 +114,15 @@ const ProfileSubScreen = () => {
 
     if (!isValid) {
       console.log("isValid");
+    }
+
+    const isFieldsFilled = Object.values(validatedFields).every(
+      (field) => field !== false
+    );
+
+    if (!isFieldsFilled) {
+      console.log("Please fill in all details");
+      return;
     }
     const requestData = {
       fullName: formData.fullName,
@@ -131,8 +133,10 @@ const ProfileSubScreen = () => {
       country: formData.country,
       bankVerificationNumber: formData.bankVerificationNumber,
     };
-  
+
     console.log("request data", requestData);
+
+    navigate("/");
   };
 
   const handleChange = (e) => {
@@ -151,8 +155,6 @@ const ProfileSubScreen = () => {
         />
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
-          
-
             <InputField
               label="Bank Verification Number (BVN)"
               type="text"
@@ -161,8 +163,6 @@ const ProfileSubScreen = () => {
               onChange={handleFullNameChange}
               validateField={validateField}
             />
-
-            
           </Row>
 
           <Button type="submit" className="register-cta cta-mob">
