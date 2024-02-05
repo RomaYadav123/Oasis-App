@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Oasis App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,8 +68,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
 
 ### About Welcome Screen:
 
@@ -207,7 +205,6 @@ This component is part of the onboarding process and should be rendered within a
 
 The ProfileScreen component plays a pivotal role in gathering essential residency-related information from users during the registration process. It ensures a smooth and comprehensive onboarding experience, leading users to the next step with their profile data securely stored.
 
-
 ### About ProfileSub Screen:
 
 1. `Overview`
@@ -253,4 +250,3 @@ This component is part of the onboarding process and should be rendered within a
 6. `Summary`
 
 The ProfileSubScreen component is a pivotal step in gathering essential details related to banking verification. It ensures a smooth and comprehensive onboarding experience, leading users to the next step with their profile data securely stored.
-
